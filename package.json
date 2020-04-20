@@ -5,6 +5,8 @@
 	"license": "MIT",
 	"repository": "sindresorhus/camelcase-keys",
 	"funding": "https://github.com/sponsors/sindresorhus",
+	"main": "dist/main/index.js",
+	"module": "dist/main/index.es.js",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
@@ -15,7 +17,8 @@
 	},
 	"scripts": {
 		"test": "xo && ava && tsd",
-		"bench": "matcha bench/bench.js"
+		"bench": "matcha bench/bench.js",
+		"build": "rollup -c"
 	},
 	"files": [
 		"index.js",
@@ -55,8 +58,16 @@
 		"quick-lru": "^4.0.1"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.9.0",
+		"@babel/plugin-external-helpers": "^7.8.3",
+		"@babel/preset-env": "^7.9.5",
 		"ava": "^2.1.0",
 		"matcha": "^0.7.0",
+		"rollup": "^2.6.1",
+		"rollup-plugin-babel": "^4.4.0",
+		"rollup-plugin-commonjs": "^10.1.0",
+		"rollup-plugin-node-resolve": "^5.2.0",
+		"rollup-plugin-peer-deps-external": "^2.2.2",
 		"tsd": "^0.11.0",
 		"xo": "^0.25.3"
 	},
